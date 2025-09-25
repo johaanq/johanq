@@ -7,6 +7,17 @@ import { ThemeToggle } from "@/components/theme-toggle"
 
 export function PDFExportButton() {
   const handleExportPDF = () => {
+    // Descargar directamente el archivo PDF estático desde la carpeta public
+    const link = document.createElement('a')
+    link.href = '/Johan Quiñones - CV.pdf'
+    link.download = 'Johan Quiñones - CV.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  // Función de exportación dinámica preservada para uso futuro
+  const handleDynamicPDFExport = () => {
     // Create a print-friendly version
     const printWindow = window.open("", "_blank")
     if (!printWindow) return
