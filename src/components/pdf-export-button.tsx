@@ -310,15 +310,16 @@ export function PDFExportButton() {
   }
 
   return (
-    <div className="fixed top-6 right-6 z-50 flex items-center gap-3">
+    <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2 sm:gap-3">
       <ThemeToggle />
       <Button 
         onClick={handleExportPDF} 
-        className="shadow-lg bg-[#B56E74] hover:bg-[#B56E74]/80 dark:bg-[#B56E74]/90 dark:hover:bg-[#B56E74]/70 text-white border border-[#B56E74]/30 dark:border-[#B56E74]/50 transition-all duration-200" 
+        className="shadow-lg bg-[#B56E74] hover:bg-[#B56E74]/80 dark:bg-[#B56E74]/90 dark:hover:bg-[#B56E74]/70 text-white border border-[#B56E74]/30 dark:border-[#B56E74]/50 transition-all duration-200 text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2" 
         size="sm"
       >
-        <Download className="w-4 h-4 mr-2" />
-        Descargar CV
+        <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+        <span className="hidden sm:inline">Descargar CV</span>
+        <span className="sm:hidden">CV</span>
       </Button>
     </div>
   )

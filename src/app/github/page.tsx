@@ -7,7 +7,7 @@ import CVLayout from "@/components/cv-layout"
 export default function GitHubPage() {
   return (
     <CVLayout>
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <GitHubProjects />
       </div>
     </CVLayout>

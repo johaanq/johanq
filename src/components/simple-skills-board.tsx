@@ -97,38 +97,38 @@ export function SimpleSkillsBoard() {
   }
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
           Skills Board
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
           Mis habilidades técnicas organizadas por categorías
         </p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {categories.map((category) => (
-          <div key={category.id} className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-6 py-4">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-6 h-6 bg-[#B56E74] dark:bg-[#B56E74]/80 rounded flex items-center justify-center">
+          <div key={category.id} className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6 py-3 sm:py-4">
+            <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="w-5 h-5 sm:w-6 sm:h-6 bg-[#B56E74] dark:bg-[#B56E74]/80 rounded flex items-center justify-center">
                 {category.icon}
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100">
                 {category.name}
               </h3>
-              <span className="px-3 py-1 bg-[#B56E74] dark:bg-[#B56E74]/80 text-white rounded-full text-xs font-medium">
+              <span className="px-2 sm:px-3 py-1 bg-[#B56E74] dark:bg-[#B56E74]/80 text-white rounded-full text-xs font-medium">
                 {category.skills.length} skills
               </span>
             </div>
             
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-3 sm:gap-6">
               {category.skills.map((skill, index) => (
                 <div key={index} className="flex flex-col items-center gap-2">
                   {/* Circular Progress with Logo */}
-                  <div className="relative w-16 h-16">
+                  <div className="relative w-12 h-12 sm:w-16 sm:h-16">
                     {/* Progress Circle Only */}
-                    <svg className="w-16 h-16" viewBox="0 0 64 64">
+                    <svg className="w-12 h-12 sm:w-16 sm:h-16" viewBox="0 0 64 64">
                       <circle
                         cx="32"
                         cy="32"
@@ -149,14 +149,14 @@ export function SimpleSkillsBoard() {
                       <img 
                         src={skill.logo} 
                         alt={`${skill.name} logo`}
-                        className="w-8 h-8 object-contain"
+                        className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
                         style={getLogoStyle(skill.name)}
                       />
                     </div>
                   </div>
                   
                   {/* Skill Name */}
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300 text-center">
+                  <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 text-center">
                     {skill.name}
                   </span>
                 </div>

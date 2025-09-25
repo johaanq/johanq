@@ -331,54 +331,55 @@ export function GitHubProjects() {
 
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center justify-center gap-2">
-          <Github className="h-6 w-6" />
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center justify-center gap-2">
+          <Github className="h-5 w-5 sm:h-6 sm:w-6" />
           GitHub Projects
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
           Mis repositorios y estadísticas de desarrollo
         </p>
       </div>
 
       {/* Integrated Repository Section */}
-      <div className="py-4">
+      <div className="py-2 sm:py-4">
         <div className="bg-[#0D0D0D]/5 dark:bg-[#0D0D0D]/20 rounded-lg border border-[#B56E74]/20 dark:border-[#B56E74]/40 overflow-hidden">
           {/* Repository Showcase Header */}
-          <div className="bg-[#B56E74]/10 dark:bg-[#B56E74]/20 px-6 py-4 border-b border-[#B56E74]/20 dark:border-[#B56E74]/40">
+          <div className="bg-[#B56E74]/10 dark:bg-[#B56E74]/20 px-4 sm:px-6 py-3 sm:py-4 border-b border-[#B56E74]/20 dark:border-[#B56E74]/40">
             <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 flex items-center gap-2">
-                <Github className="h-5 w-5 text-[#B56E74] dark:text-[#B56E74]/90" />
-                Mis Repositorios
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 flex items-center gap-2">
+                <Github className="h-4 w-4 sm:h-5 sm:w-5 text-[#B56E74] dark:text-[#B56E74]/90" />
+                <span className="hidden sm:inline">Mis Repositorios</span>
+                <span className="sm:hidden">Repos</span>
               </h3>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2">
                 <button
                   onClick={() => scrollToRepo('left')}
-                  className="p-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors"
+                  className="p-1.5 sm:p-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors"
                 >
-                  <ChevronLeft className="h-4 w-4 text-gray-700 dark:text-gray-300" />
+                  <ChevronLeft className="h-3 w-3 sm:h-4 sm:w-4 text-gray-700 dark:text-gray-300" />
                 </button>
                 <button
                   onClick={() => scrollToRepo('right')}
-                  className="p-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors"
+                  className="p-1.5 sm:p-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors"
                 >
-                  <ChevronRight className="h-4 w-4 text-gray-700 dark:text-gray-300" />
+                  <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 text-gray-700 dark:text-gray-300" />
                 </button>
               </div>
             </div>
           </div>
 
           {/* Repository Cards */}
-          <div className="p-6">
+          <div className="p-3 sm:p-6">
             <div 
               ref={scrollContainerRef}
-              className="flex gap-4 overflow-x-auto pb-4 mb-6"
+              className="flex gap-3 sm:gap-4 overflow-x-auto pb-3 sm:pb-4 mb-4 sm:mb-6"
             >
               {repositories.map((repo, index) => (
                 <div
                   key={index}
-                  className={`flex-shrink-0 w-64 p-3 rounded-lg border cursor-pointer transition-all hover:shadow-lg ${
+                  className={`flex-shrink-0 w-56 sm:w-64 p-3 rounded-lg border cursor-pointer transition-all hover:shadow-lg ${
                     selectedRepo?.name === repo.name 
                       ? 'border-[#B56E74] dark:border-[#B56E74]/80 bg-[#2E2500]/5 dark:bg-[#2E2500]/10 shadow-md ring-2 ring-[#2E2500]/20 dark:ring-[#2E2500]/40' 
                       : 'border-[#B56E74]/20 dark:border-[#B56E74]/40 hover:border-[#2E2500]/40 dark:hover:border-[#2E2500]/60 bg-[#0D0D0D]/5 dark:bg-[#0D0D0D]/20'

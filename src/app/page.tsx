@@ -34,28 +34,30 @@ export default function Home() {
 
   return (
     <CVLayout>
-      <div className="max-w-4xl mx-auto px-6 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
               {/* Personal Info */}
-              <section className="mb-16 text-center">
-                <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              <section className="mb-12 sm:mb-16 text-center">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
                   Johan Jorge Quiñones Tintaya
                 </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
                   Full Stack Developer & Software Engineer
                 </p>
                 
                 {/* Info */}
-                <div className="flex justify-center gap-8 text-gray-500 dark:text-gray-400 mb-12">
+                <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-8 text-gray-500 dark:text-gray-400 mb-8 sm:mb-12 text-sm sm:text-base">
                   <span>Ingeniería de Software</span>
+                  <span className="hidden sm:inline">•</span>
                   <span>7mo Ciclo - UPC</span>
+                  <span className="hidden sm:inline">•</span>
                   <span>Lima, Perú</span>
                 </div>
                 
                 {/* Contact Links */}
-                <div className="flex justify-center gap-4 mb-16">
+                <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
                   <button
                     onClick={copyEmailToClipboard}
-                    className="flex items-center gap-2 px-4 py-2 bg-[#141414] text-white rounded-lg hover:bg-[#141414]/80 transition-colors text-sm relative"
+                    className="flex items-center justify-center gap-2 px-4 py-2 bg-[#141414] text-white rounded-lg hover:bg-[#141414]/80 transition-colors text-sm relative"
                   >
                     {emailCopied ? <Check className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
                     {emailCopied ? "¡Copiado!" : "Email"}
@@ -64,7 +66,7 @@ export default function Home() {
                     href="https://github.com/johaanq"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded-lg hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 text-sm"
+                    className="flex items-center justify-center gap-2 px-4 py-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded-lg hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 text-sm"
                   >
                     <Github className="h-4 w-4" />
                     GitHub
@@ -73,7 +75,7 @@ export default function Home() {
                     href="https://www.linkedin.com/in/johan-qui%C3%B1ones-tintaya-b0654b2b5"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded-lg hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 text-sm"
+                    className="flex items-center justify-center gap-2 px-4 py-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded-lg hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 text-sm"
                   >
               <Linkedin className="h-4 w-4" />
               LinkedIn
@@ -82,12 +84,12 @@ export default function Home() {
         </section>
 
               {/* About Me Section */}
-              <section className="mb-16">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">
+              <section className="mb-12 sm:mb-16">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 sm:mb-8 text-center">
                   Sobre mí
                 </h2>
                 
-                <div className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-6">
+                <div className="prose prose-sm sm:prose-lg max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 sm:space-y-6">
                   <p>
                     Soy estudiante de 7mo ciclo de <strong>Ingeniería de Software</strong> en la Universidad Peruana de Ciencias Aplicadas (UPC), 
                     con una sólida formación en desarrollo full-stack y una pasión por crear soluciones tecnológicas innovadoras.
@@ -113,14 +115,14 @@ export default function Home() {
           </div>
           
           {/* Technology Logos */}
-          <div className="mt-12">
-            <div className="grid grid-cols-6 gap-6 justify-items-center">
+          <div className="mt-8 sm:mt-12">
+            <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 justify-items-center">
               {techLogos.map((tech) => (
                 <div key={tech.name} className="flex items-center justify-center">
                   <img 
                     src={tech.logo} 
                     alt={`${tech.name} logo`}
-                    className="w-12 h-12 object-contain hover:scale-110 transition-transform duration-200"
+                    className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain hover:scale-110 transition-transform duration-200"
                     style={{
                       filter: 'brightness(0) saturate(100%) invert(50%) sepia(35%) saturate(1500%) hue-rotate(320deg) brightness(110%) contrast(95%)'
                     }}
@@ -132,38 +134,38 @@ export default function Home() {
           </div>
           
           {/* GitHub Projects Button */}
-          <div className="text-center mt-8">
+          <div className="text-center mt-6 sm:mt-8">
             <a
               href="/github"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#B56E74] text-white rounded-lg hover:bg-[#B56E74]/80 transition-colors text-lg font-medium"
+              className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-[#B56E74] text-white rounded-lg hover:bg-[#B56E74]/80 transition-colors text-base sm:text-lg font-medium"
             >
-              <Github className="h-5 w-5" />
+              <Github className="h-4 w-4 sm:h-5 sm:w-5" />
               Mis Proyectos
             </a>
           </div>
         </section>
 
         {/* Education & Certifications */}
-              <section className="mb-16">
-                <div className="grid md:grid-cols-2 gap-12">
+              <section className="mb-12 sm:mb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
                   {/* Education */}
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6">
                       Formación Académica
                     </h2>
                     
-                    <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-6">
-                      <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
+                    <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6">
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
                         Ingeniería de Software
                       </h3>
-                      <p className="text-gray-700 dark:text-gray-300 mb-2">
+                      <p className="text-gray-700 dark:text-gray-300 mb-2 text-sm sm:text-base">
                         Universidad Peruana de Ciencias Aplicadas (UPC)
                       </p>
-                      <div className="flex items-center gap-2">
-                        <span className="px-2 py-1 bg-[#B56E74]/10 dark:bg-[#B56E74]/20 text-[#B56E74] dark:text-[#B56E74]/90 rounded text-sm">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="px-2 py-1 bg-[#B56E74]/10 dark:bg-[#B56E74]/20 text-[#B56E74] dark:text-[#B56E74]/90 rounded text-xs sm:text-sm">
                           7mo Ciclo
                         </span>
-                        <span className="px-2 py-1 bg-[#B56E74]/10 dark:bg-[#B56E74]/20 text-[#B56E74] dark:text-[#B56E74]/90 rounded text-sm">
+                        <span className="px-2 py-1 bg-[#B56E74]/10 dark:bg-[#B56E74]/20 text-[#B56E74] dark:text-[#B56E74]/90 rounded text-xs sm:text-sm">
                           En curso
                         </span>
                       </div>
@@ -172,37 +174,37 @@ export default function Home() {
             
                   {/* Certifications */}
                 <div>
-                    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6">
                       Certificaciones
                     </h2>
                     
-                    <div className="space-y-4">
-                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-gray-100">
+                    <div className="space-y-3 sm:space-y-4">
+                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6">
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
                           Google IT Automation with Python
                         </h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">Coursera - Google</p>
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Coursera - Google</p>
                 </div>
                       
-                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-gray-100">
+                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6">
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
                           Introduction to Web Development
                         </h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">Coursera - UC Davis</p>
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Coursera - UC Davis</p>
                 </div>
                       
-                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-gray-100">
+                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6">
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
                           MongoDB Basics
                         </h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">MongoDB University</p>
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">MongoDB University</p>
                 </div>
                       
-                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-6">
-                        <h4 className="font-semibold text-gray-900 dark:text-gray-100">
+                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6">
+                        <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
                           Scrum Fundamentals Certified
                         </h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">SCRUMstudy</p>
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">SCRUMstudy</p>
                 </div>
               </div>
             </div>

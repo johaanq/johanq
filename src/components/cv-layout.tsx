@@ -24,6 +24,7 @@ export default function CVLayout({
   const pathname = usePathname()
   const navRef = useRef<HTMLDivElement>(null)
   const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 })
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const updateIndicator = () => {
@@ -64,9 +65,29 @@ export default function CVLayout({
     <div className="min-h-screen bg-gray-50 dark:bg-[#0D0D0D] transition-all duration-500">
       {/* Header */}
       <header className="border-b border-[#2E2500]/30 dark:border-[#2E2500]/50 bg-white dark:bg-[#0D0D0D]/80 sticky top-0 z-50 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex justify-center items-center">
-            {/* Navigation Tabs */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+          {/* Mobile Header */}
+          <div className="flex justify-between items-center lg:hidden">
+            <div className="text-lg font-bold text-gray-900 dark:text-gray-100">
+              Johan Q.
+            </div>
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg bg-[#141414] text-white hover:bg-[#141414]/80 transition-colors"
+              aria-label="Toggle mobile menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex justify-center items-center">
             <div ref={navRef} className="flex gap-1 relative">
               {/* Background indicator */}
               <motion.div
@@ -105,6 +126,33 @@ export default function CVLayout({
               ))}
             </div>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden mt-4 border-t border-[#2E2500]/20 dark:border-[#2E2500]/30"
+            >
+              <div className="py-4 space-y-2">
+                {navigationItems.map((section) => (
+                  <Link
+                    key={section.id}
+                    href={section.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`block px-4 py-3 rounded-lg transition-colors text-sm font-medium ${
+                      pathname === section.href
+                        ? 'bg-[#141414] text-white'
+                        : 'text-gray-600 dark:text-gray-400 hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20'
+                    }`}
+                  >
+                    {section.label}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
         </div>
       </header>
 
@@ -116,12 +164,12 @@ export default function CVLayout({
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[#2E2500]/30 dark:border-[#2E2500]/50 mt-20 py-12 bg-white dark:bg-[#0D0D0D]/80">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+      <footer className="border-t border-[#2E2500]/30 dark:border-[#2E2500]/50 mt-12 sm:mt-20 py-8 sm:py-12 bg-white dark:bg-[#0D0D0D]/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
             {/* Personal Info */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
                 Johan Jorge Quiñones Tintaya
               </h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm mb-2">
@@ -133,8 +181,8 @@ export default function CVLayout({
             </div>
             
             {/* Quick Links */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            <div className="text-center sm:text-left">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
                 Enlaces Rápidos
               </h3>
               <div className="space-y-2">
@@ -151,18 +199,18 @@ export default function CVLayout({
             </div>
             
             {/* Location */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
+            <div className="text-center sm:text-left sm:col-span-2 lg:col-span-1">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
                 Ubicación
               </h3>
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
+              <div className="flex items-center justify-center sm:justify-start gap-2 text-gray-600 dark:text-gray-400 text-sm">
                 <MapPin className="h-4 w-4" />
                 Lima, Perú
               </div>
             </div>
           </div>
           
-          <div className="border-t border-[#2E2500]/20 dark:border-[#2E2500]/30 pt-6 text-center">
+          <div className="border-t border-[#2E2500]/20 dark:border-[#2E2500]/30 pt-4 sm:pt-6 text-center">
             <p className="text-gray-600 dark:text-gray-400 text-sm">
               © 2025 Johan Jorge Quiñones Tintaya. Todos los derechos reservados.
             </p>
