@@ -36,8 +36,12 @@ export function PDFExportButton() {
             .pdf-header h1 { font-size: 24px; font-weight: bold; color: #1f2937; margin-bottom: 5px; }
             .pdf-header .subtitle { font-size: 14px; color: #3b82f6; font-weight: 600; margin-bottom: 8px; }
             .pdf-header .contact { font-size: 10px; color: #6b7280; }
+            .pdf-link { color: #3b82f6; text-decoration: none; cursor: pointer; }
+            .pdf-link:hover { text-decoration: underline; }
             .pdf-section { margin-bottom: 18px; }
             .pdf-section h2 { font-size: 14px; font-weight: bold; color: #3b82f6; margin-bottom: 8px; border-bottom: 1px solid #e5e7eb; padding-bottom: 3px; }
+            .pdf-section p { margin-bottom: 8px; text-align: justify; }
+            .pdf-section p strong { color: #1f2937; font-weight: 600; }
             .pdf-section h3 { font-size: 12px; font-weight: 600; color: #1f2937; margin-bottom: 5px; }
             .pdf-section h4 { font-size: 11px; font-weight: 600; color: #3b82f6; margin-bottom: 3px; }
             .pdf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
@@ -105,13 +109,18 @@ export function PDFExportButton() {
               <div class="subtitle">Full Stack Developer & Software Engineer</div>
               <div class="contact">
                 📧 quinonesjorge83@gmail.com | 📍 Lima, Perú | 🎓 Ingeniería de Software - 7mo Ciclo UPC | 
-                🔗 GitHub: johaanq | 💼 LinkedIn
+                <a href="https://github.com/johaanq" target="_blank" class="pdf-link">🔗 GitHub</a> | 
+                <a href="https://linkedin.com/in/johan-quinones-tintaya" target="_blank" class="pdf-link">💼 LinkedIn</a>
               </div>
             </div>
 
             <div class="pdf-section">
               <h2>Sobre mí</h2>
-              <p>Soy estudiante de 7mo ciclo de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC), con una sólida formación en desarrollo full-stack y una pasión por crear soluciones tecnológicas innovadoras. Mi experiencia abarca tanto el desarrollo frontend como backend, trabajando con tecnologías modernas como React, Next.js, Spring Boot y Flutter. Me especializo en la creación de aplicaciones escalables y eficientes, con un enfoque particular en la experiencia del usuario y la arquitectura de software.</p>
+              <p>Soy un desarrollador Full Stack apasionado por la tecnología y la innovación, actualmente cursando el 7mo ciclo de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Mi enfoque se centra en crear soluciones tecnológicas robustas y escalables que generen impacto real en los usuarios.</p>
+              
+              <p><strong>Especialización:</strong> Desarrollo de aplicaciones web y móviles con arquitecturas modernas, implementando mejores prácticas de desarrollo y metodologías ágiles. Experiencia sólida en el ecosistema JavaScript/TypeScript (React, Next.js) y tecnologías backend (Spring Boot, Java, C#).</p>
+              
+              <p><strong>Enfoque profesional:</strong> Me destaco por mi capacidad de análisis técnico, resolución de problemas complejos y trabajo colaborativo. Busco constantemente oportunidades para aplicar nuevas tecnologías y metodologías que mejoren la eficiencia y calidad del desarrollo de software.</p>
             </div>
 
             <div class="pdf-grid">
