@@ -68,9 +68,6 @@ export default function CVLayout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
           {/* Mobile Header */}
           <div className="flex justify-between items-center lg:hidden">
-            <div className="text-lg font-bold text-gray-900 dark:text-gray-100">
-              Johan Q.
-            </div>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-lg bg-[#141414] text-white hover:bg-[#141414]/80 transition-colors"
@@ -84,6 +81,10 @@ export default function CVLayout({
                 )}
               </svg>
             </button>
+            <div className="text-lg font-bold text-gray-900 dark:text-gray-100">
+              Johan Q.
+            </div>
+            <div className="w-10"></div> {/* Spacer para centrar el título */}
           </div>
 
           {/* Desktop Navigation */}

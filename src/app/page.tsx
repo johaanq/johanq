@@ -54,31 +54,34 @@ export default function Home() {
                 </div>
                 
                 {/* Contact Links */}
-                <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 mb-12 sm:mb-16">
+                <div className="flex justify-center gap-2 sm:gap-4 mb-12 sm:mb-16">
                   <button
                     onClick={copyEmailToClipboard}
-                    className="flex items-center justify-center gap-2 px-4 py-2 bg-[#141414] text-white rounded-lg hover:bg-[#141414]/80 transition-colors text-sm relative"
+                    className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 bg-[#141414] text-white rounded-lg hover:bg-[#141414]/80 transition-colors text-xs sm:text-sm relative"
                   >
-                    {emailCopied ? <Check className="h-4 w-4" /> : <Mail className="h-4 w-4" />}
-                    {emailCopied ? "¡Copiado!" : "Email"}
+                    {emailCopied ? <Check className="h-3 w-3 sm:h-4 sm:w-4" /> : <Mail className="h-3 w-3 sm:h-4 sm:w-4" />}
+                    <span className="hidden sm:inline">{emailCopied ? "¡Copiado!" : "Email"}</span>
+                    <span className="sm:hidden">{emailCopied ? "✓" : "📧"}</span>
                   </button>
                   <a
                     href="https://github.com/johaanq"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-4 py-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded-lg hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 text-sm"
+                    className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded-lg hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 text-xs sm:text-sm"
                   >
-                    <Github className="h-4 w-4" />
-                    GitHub
+                    <Github className="h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="hidden sm:inline">GitHub</span>
+                    <span className="sm:hidden">GH</span>
                   </a>
                   <a
                     href="https://www.linkedin.com/in/johan-qui%C3%B1ones-tintaya-b0654b2b5"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-4 py-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded-lg hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 text-sm"
+                    className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-2 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded-lg hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 text-xs sm:text-sm"
                   >
-              <Linkedin className="h-4 w-4" />
-              LinkedIn
+              <Linkedin className="h-3 w-3 sm:h-4 sm:w-4" />
+              <span className="hidden sm:inline">LinkedIn</span>
+              <span className="sm:hidden">LI</span>
             </a>
           </div>
         </section>
