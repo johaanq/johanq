@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useRef, useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { PDFExportButton } from "@/components/pdf-export-button"
@@ -8,20 +8,53 @@ import { PageTransition } from "@/components/page-transition"
 import { MapPin } from "lucide-react"
 import { motion } from "framer-motion"
 
+const navigationItems = [
+  { id: 'about', label: 'About Me', href: '/' },
+  { id: 'api', label: 'API Developer', href: '/api' },
+  { id: 'terminal', label: 'Terminal', href: '/terminal' },
+  { id: 'skills', label: 'Skills Board', href: '/skills' },
+  { id: 'github', label: 'GitHub Projects', href: '/github' }
+]
+
 export default function CVLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   const pathname = usePathname()
+  const navRef = useRef<HTMLDivElement>(null)
+  const [indicatorStyle, setIndicatorStyle] = useState({ width: 0, left: 0 })
 
-  const navigationItems = [
-    { id: 'about', label: 'About Me', href: '/' },
-    { id: 'api', label: 'API Developer', href: '/api' },
-    { id: 'terminal', label: 'Terminal', href: '/terminal' },
-    { id: 'skills', label: 'Skills Board', href: '/skills' },
-    { id: 'github', label: 'GitHub Projects', href: '/github' }
-  ]
+  useEffect(() => {
+    const updateIndicator = () => {
+      if (!navRef.current) return
+      
+      const activeIndex = navigationItems.findIndex(item => item.href === pathname)
+      if (activeIndex === -1) return
+      
+      const navItems = navRef.current.children
+      const activeItem = navItems[activeIndex] as HTMLElement
+      
+      if (activeItem) {
+        const navRect = navRef.current.getBoundingClientRect()
+        const itemRect = activeItem.getBoundingClientRect()
+        
+        setIndicatorStyle({
+          width: itemRect.width,
+          left: itemRect.left - navRect.left
+        })
+      }
+    }
+
+    // Use requestAnimationFrame to ensure DOM is ready
+    const timeoutId = setTimeout(updateIndicator, 0)
+    window.addEventListener('resize', updateIndicator)
+    
+    return () => {
+      clearTimeout(timeoutId)
+      window.removeEventListener('resize', updateIndicator)
+    }
+  }, [pathname])
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0D0D0D] transition-all duration-500">
@@ -30,7 +63,7 @@ export default function CVLayout({
         <div className="max-w-7xl mx-auto px-6 py-6">
           <div className="flex justify-center items-center">
             {/* Navigation Tabs */}
-            <div className="flex gap-1 relative">
+            <div ref={navRef} className="flex gap-1 relative">
               {/* Background indicator */}
               <motion.div
                 className="absolute bg-[#141414] rounded-lg"
@@ -41,9 +74,9 @@ export default function CVLayout({
                   damping: 40
                 }}
                 style={{
-                  width: `${100 / navigationItems.length}%`,
+                  width: indicatorStyle.width,
                   height: "100%",
-                  left: `${navigationItems.findIndex(item => item.href === pathname) * (100 / navigationItems.length)}%`
+                  left: indicatorStyle.left
                 }}
               />
               
