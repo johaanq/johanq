@@ -81,10 +81,7 @@ export default function CVLayout({
                 )}
               </svg>
             </button>
-            <div className="text-lg font-bold text-gray-900 dark:text-gray-100">
-              Johan Q.
-            </div>
-            <div className="w-10"></div> {/* Spacer para centrar el título */}
+            <div className="w-10"></div> {/* Spacer para balancear el layout */}
           </div>
 
           {/* Desktop Navigation */}
