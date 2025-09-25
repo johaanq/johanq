@@ -32,8 +32,12 @@ export default function CVLayout({
       const activeIndex = navigationItems.findIndex(item => item.href === pathname)
       if (activeIndex === -1) return
       
-      const navItems = navRef.current.children
-      const activeItem = navItems[activeIndex] as HTMLElement
+      // Get all Link elements (skip the indicator which is first child)
+      const linkElements = Array.from(navRef.current.children).filter(
+        (child, index) => index > 0 // Skip the motion.div indicator
+      ) as HTMLElement[]
+      
+      const activeItem = linkElements[activeIndex]
       
       if (activeItem) {
         const navRect = navRef.current.getBoundingClientRect()
@@ -47,7 +51,7 @@ export default function CVLayout({
     }
 
     // Use requestAnimationFrame to ensure DOM is ready
-    const timeoutId = setTimeout(updateIndicator, 0)
+    const timeoutId = setTimeout(updateIndicator, 100)
     window.addEventListener('resize', updateIndicator)
     
     return () => {
