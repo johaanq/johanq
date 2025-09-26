@@ -37,15 +37,15 @@ export default function Home() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
               {/* Personal Info */}
               <section className="mb-12 sm:mb-16 text-center">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-3 sm:mb-4 animate-fade-in">
                   Johan Jorge Quiñones Tintaya
                 </h1>
-                <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
+                <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
                   Full Stack Developer & Software Engineer
                 </p>
                 
                 {/* Info */}
-                <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-8 text-gray-500 dark:text-gray-400 mb-8 sm:mb-12 text-sm sm:text-base">
+                <div className="flex flex-col sm:flex-row justify-center gap-2 sm:gap-8 text-gray-500 dark:text-gray-400 mb-8 sm:mb-12 text-sm sm:text-base animate-slide-up" style={{ animationDelay: '0.2s' }}>
                   <span>Ingeniería de Software</span>
                   <span className="hidden sm:inline">•</span>
                   <span>7mo Ciclo - UPC</span>
@@ -54,7 +54,7 @@ export default function Home() {
                 </div>
                 
                 {/* Contact Links */}
-                <div className="flex justify-center gap-2 sm:gap-4 mb-12 sm:mb-16">
+                <div className="flex justify-center gap-2 sm:gap-4 mb-12 sm:mb-16 animate-slide-up" style={{ animationDelay: '0.3s' }}>
                   <button
                     onClick={copyEmailToClipboard}
                     className="flex items-center justify-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-[#141414] text-white rounded-lg hover:bg-[#141414]/80 transition-colors text-xs sm:text-sm relative"
@@ -88,40 +88,40 @@ export default function Home() {
 
               {/* About Me Section */}
               <section className="mb-12 sm:mb-16">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 sm:mb-8 text-center">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 sm:mb-8 text-center animate-fade-in">
                   Sobre mí
                 </h2>
                 
                 <div className="prose prose-sm sm:prose-lg max-w-none text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 sm:space-y-6">
-                  <p>
-                    Soy estudiante de 7mo ciclo de <strong>Ingeniería de Software</strong> en la Universidad Peruana de Ciencias Aplicadas (UPC), 
+                  <p className="animate-slide-up" style={{ animationDelay: '0.1s' }}>
+                    Soy estudiante de 7mo ciclo de <span className="highlight-keyword">Ingeniería de Software</span> en la Universidad Peruana de Ciencias Aplicadas (UPC), 
                     con una sólida formación en desarrollo full-stack y una pasión por crear soluciones tecnológicas innovadoras.
                   </p>
                   
-                  <p>
-                    Mi experiencia abarca tanto el desarrollo frontend como backend, trabajando con tecnologías modernas como React, Next.js, 
-                    Spring Boot y Flutter. He participado en proyectos colaborativos que integran desarrollo web y móvil, 
+                  <p className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                    Mi experiencia abarca tanto el desarrollo frontend como backend, trabajando con tecnologías modernas como <span className="highlight-keyword">React</span>, <span className="highlight-keyword">Next.js</span>, 
+                    <span className="highlight-keyword">Spring Boot</span> y <span className="highlight-keyword">Flutter</span>. He participado en proyectos colaborativos que integran desarrollo web y móvil, 
                     siempre aplicando metodologías ágiles y las mejores prácticas de la industria.
                   </p>
                   
-                  <p>
-                    Me especializo en la creación de aplicaciones escalables y eficientes, con un enfoque particular en la experiencia 
-                    del usuario y la arquitectura de software. Mi formación académica me ha permitido desarrollar una base sólida en 
+                  <p className="animate-slide-up" style={{ animationDelay: '0.3s' }}>
+                    Me especializo en la creación de aplicaciones escalables y eficientes, con un enfoque particular en la experiencia del usuario 
+                    y la arquitectura de software. Mi formación académica me ha permitido desarrollar una base sólida en 
                     algoritmos, estructuras de datos y patrones de diseño.
                   </p>
                   
-                  <p>
+                  <p className="animate-slide-up" style={{ animationDelay: '0.4s' }}>
                     Constantemente busco aprender nuevas tecnologías y mantenerme actualizado con las tendencias del desarrollo de software. 
                     Mi objetivo es contribuir a proyectos que generen un impacto positivo y continuar creciendo profesionalmente en el 
                     campo de la ingeniería de software.
-            </p>
-          </div>
+                  </p>
+                </div>
           
           {/* Technology Logos */}
-          <div className="mt-8 sm:mt-12">
+          <div className="mt-8 sm:mt-12 animate-slide-up" style={{ animationDelay: '0.5s' }}>
             <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 justify-items-center">
-              {techLogos.map((tech) => (
-                <div key={tech.name} className="flex items-center justify-center">
+              {techLogos.map((tech, index) => (
+                <div key={tech.name} className="flex items-center justify-center animate-slide-up" style={{ animationDelay: `${0.6 + index * 0.05}s` }}>
                   <img 
                     src={tech.logo} 
                     alt={`${tech.name} logo`}
@@ -137,7 +137,7 @@ export default function Home() {
           </div>
           
           {/* GitHub Projects Button */}
-          <div className="text-center mt-6 sm:mt-8">
+          <div className="text-center mt-6 sm:mt-8 animate-slide-up" style={{ animationDelay: '1.2s' }}>
             <a
               href="/github"
               className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-[#B56E74] text-white rounded-lg hover:bg-[#B56E74]/80 transition-colors text-base sm:text-lg font-medium"
@@ -152,7 +152,7 @@ export default function Home() {
               <section className="mb-12 sm:mb-16">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
                   {/* Education */}
-                  <div>
+                  <div className="animate-slide-up" style={{ animationDelay: '1.3s' }}>
                     <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6">
                       Formación Académica
                     </h2>
@@ -176,34 +176,34 @@ export default function Home() {
             </div>
             
                   {/* Certifications */}
-                <div>
+                <div className="animate-slide-up" style={{ animationDelay: '1.4s' }}>
                     <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-6">
                       Certificaciones
                     </h2>
                     
                     <div className="space-y-3 sm:space-y-4">
-                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6">
+                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6 animate-slide-up" style={{ animationDelay: '1.5s' }}>
                         <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
                           Google IT Automation with Python
                         </h4>
                         <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Coursera - Google</p>
                 </div>
                       
-                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6">
+                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6 animate-slide-up" style={{ animationDelay: '1.6s' }}>
                         <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
                           Introduction to Web Development
                         </h4>
                         <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Coursera - UC Davis</p>
                 </div>
                       
-                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6">
+                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6 animate-slide-up" style={{ animationDelay: '1.7s' }}>
                         <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
                           MongoDB Basics
                         </h4>
                         <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">MongoDB University</p>
                 </div>
                       
-                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6">
+                      <div className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6 animate-slide-up" style={{ animationDelay: '1.8s' }}>
                         <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm sm:text-base">
                           Scrum Fundamentals Certified
                         </h4>

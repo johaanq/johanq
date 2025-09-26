@@ -266,15 +266,15 @@ export function TerminalSimulator() {
   return (
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 animate-fade-in">
           Terminal Simulator
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-gray-400 animate-slide-up" style={{ animationDelay: '0.1s' }}>
           Explora mi información usando comandos de terminal
         </p>
       </div>
 
-      <div className="pl-6 py-4">
+      <div className="pl-6 py-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
         <div className="bg-[#0D0D0D]/5 dark:bg-[#0D0D0D]/20 rounded-lg border border-[#B56E74]/20 dark:border-[#B56E74]/40 overflow-hidden">
           {/* Terminal Header */}
           <div className="bg-[#B56E74]/10 dark:bg-[#B56E74]/20 px-4 py-3 border-b border-[#B56E74]/20 dark:border-[#B56E74]/40">
@@ -343,35 +343,40 @@ export function TerminalSimulator() {
         <div className="mt-4 flex flex-wrap gap-2">
           <button
             onClick={() => !isTyping && executeCommand('help')}
-            className="px-3 py-1 bg-[#141414] text-white rounded text-xs hover:bg-[#141414]/80 transition-colors"
+            className="px-3 py-1 bg-[#141414] text-white rounded text-xs hover:bg-[#141414]/80 transition-colors animate-slide-up"
+            style={{ animationDelay: '0.3s' }}
             disabled={isTyping}
           >
             help
           </button>
           <button
             onClick={() => !isTyping && executeCommand('projects')}
-            className="px-3 py-1 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded text-xs hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300"
+            className="px-3 py-1 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded text-xs hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 animate-slide-up"
+            style={{ animationDelay: '0.4s' }}
             disabled={isTyping}
           >
             projects
           </button>
           <button
             onClick={() => !isTyping && executeCommand('skills')}
-            className="px-3 py-1 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded text-xs hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300"
+            className="px-3 py-1 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded text-xs hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 animate-slide-up"
+            style={{ animationDelay: '0.5s' }}
             disabled={isTyping}
           >
             skills
           </button>
           <button
             onClick={typewriterDemo}
-            className="px-3 py-1 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded text-xs hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300"
+            className="px-3 py-1 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded text-xs hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 animate-slide-up"
+            style={{ animationDelay: '0.6s' }}
             disabled={isTyping}
           >
             {isTyping ? 'Ejecutando...' : 'Demo'}
           </button>
           <button
             onClick={() => executeCommand('clear')}
-            className="px-3 py-1 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded text-xs hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300"
+            className="px-3 py-1 border border-[#B56E74]/40 dark:border-[#B56E74]/60 rounded text-xs hover:bg-[#B56E74]/10 dark:hover:bg-[#B56E74]/20 transition-colors text-gray-700 dark:text-gray-300 animate-slide-up"
+            style={{ animationDelay: '0.7s' }}
             disabled={isTyping}
           >
             clear

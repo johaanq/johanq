@@ -333,17 +333,17 @@ export function GitHubProjects() {
   return (
     <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
       <div className="text-center">
-        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center justify-center gap-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center justify-center gap-2 animate-fade-in">
           <Github className="h-5 w-5 sm:h-6 sm:w-6" />
           GitHub Projects
         </h2>
-        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 animate-slide-up" style={{ animationDelay: '0.1s' }}>
           Mis repositorios y estadísticas de desarrollo
         </p>
       </div>
 
       {/* Integrated Repository Section */}
-      <div className="py-2 sm:py-4">
+      <div className="py-2 sm:py-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
         <div className="bg-[#0D0D0D]/5 dark:bg-[#0D0D0D]/20 rounded-lg border border-[#B56E74]/20 dark:border-[#B56E74]/40 overflow-hidden">
           {/* Repository Showcase Header */}
           <div className="bg-[#B56E74]/10 dark:bg-[#B56E74]/20 px-4 sm:px-6 py-3 sm:py-4 border-b border-[#B56E74]/20 dark:border-[#B56E74]/40">
@@ -379,11 +379,12 @@ export function GitHubProjects() {
               {repositories.map((repo, index) => (
                 <div
                   key={index}
-                  className={`flex-shrink-0 w-56 sm:w-64 p-3 rounded-lg border cursor-pointer transition-all hover:shadow-lg ${
+                  className={`flex-shrink-0 w-56 sm:w-64 p-3 rounded-lg border cursor-pointer transition-all hover:shadow-lg animate-slide-up ${
                     selectedRepo?.name === repo.name 
                       ? 'border-[#B56E74] dark:border-[#B56E74]/80 bg-[#2E2500]/5 dark:bg-[#2E2500]/10 shadow-md ring-2 ring-[#2E2500]/20 dark:ring-[#2E2500]/40' 
                       : 'border-[#B56E74]/20 dark:border-[#B56E74]/40 hover:border-[#2E2500]/40 dark:hover:border-[#2E2500]/60 bg-[#0D0D0D]/5 dark:bg-[#0D0D0D]/20'
                   }`}
+                  style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                   onClick={() => {
                     setSelectedRepo(repo)
                     setIsReposExpanded(false) // Reset expanded state
@@ -437,7 +438,7 @@ export function GitHubProjects() {
 
             {/* Repository Details */}
             {selectedRepo && (
-              <div className="border-t border-[#B56E74]/20 dark:border-[#B56E74]/40 pt-6">
+              <div className="border-t border-[#B56E74]/20 dark:border-[#B56E74]/40 pt-6 animate-slide-up" style={{ animationDelay: '0.8s' }}>
                 <div className="flex items-center gap-2 mb-4">
                   <Star className="h-5 w-5 text-[#B56E74] dark:text-[#B56E74]/90" />
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">

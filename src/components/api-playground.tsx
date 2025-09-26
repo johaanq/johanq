@@ -167,17 +167,17 @@ export function APIPlayground() {
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 animate-fade-in">
           API Developer Playground
         </h2>
-        <p className="text-gray-600 dark:text-gray-400">
+        <p className="text-gray-600 dark:text-gray-400 animate-slide-up" style={{ animationDelay: '0.1s' }}>
           Explora las APIs que he desarrollado - Datos reales sobre mi perfil profesional
         </p>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-3">
         {/* Endpoints List */}
-        <div className="py-6">
+        <div className="py-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
           <div className="bg-[#0D0D0D]/5 dark:bg-[#0D0D0D]/20 rounded-lg border border-[#B56E74]/20 dark:border-[#B56E74]/40 overflow-hidden">
             <div className="bg-[#B56E74]/10 dark:bg-[#B56E74]/20 px-6 py-4 border-b border-[#B56E74]/20 dark:border-[#B56E74]/40">
               <div className="flex items-center gap-2">
@@ -193,11 +193,12 @@ export function APIPlayground() {
                 {myAPIs.map((endpoint, index) => (
                   <div
                     key={index}
-                    className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                    className={`p-4 rounded-lg border cursor-pointer transition-all animate-slide-up ${
                       selectedEndpoint === index 
                         ? 'border-[#B56E74] dark:border-[#B56E74]/80 bg-[#B56E74]/5 dark:bg-[#B56E74]/10 shadow-md ring-2 ring-[#B56E74]/20 dark:ring-[#B56E74]/40' 
                         : 'border-[#B56E74]/20 dark:border-[#B56E74]/40 hover:border-[#B56E74]/40 dark:hover:border-[#B56E74]/60 bg-[#0D0D0D]/5 dark:bg-[#0D0D0D]/20'
                     }`}
+                    style={{ animationDelay: `${0.3 + index * 0.1}s` }}
                     onClick={() => setSelectedEndpoint(index)}
                   >
                     <div className="flex items-center gap-3 mb-2">
@@ -222,7 +223,7 @@ export function APIPlayground() {
         </div>
 
         {/* API Response */}
-        <div className="py-6">
+        <div className="py-6 animate-slide-up" style={{ animationDelay: '0.7s' }}>
           <div className="bg-[#0D0D0D]/5 dark:bg-[#0D0D0D]/20 rounded-lg border border-[#B56E74]/20 dark:border-[#B56E74]/40 overflow-hidden">
             <div className="bg-[#B56E74]/10 dark:bg-[#B56E74]/20 px-6 py-4 border-b border-[#B56E74]/20 dark:border-[#B56E74]/40">
               <div className="flex items-center justify-between">

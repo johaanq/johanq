@@ -99,17 +99,17 @@ export function SimpleSkillsBoard() {
   return (
     <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
       <div className="text-center">
-        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+        <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 animate-fade-in">
           Skills Board
         </h2>
-        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 animate-slide-up" style={{ animationDelay: '0.1s' }}>
           Mis habilidades técnicas organizadas por categorías
         </p>
       </div>
 
       <div className="space-y-4 sm:space-y-6">
-        {categories.map((category) => (
-          <div key={category.id} className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6 py-3 sm:py-4">
+        {categories.map((category, categoryIndex) => (
+          <div key={category.id} className="border-l-4 border-[#B56E74] dark:border-[#B56E74]/80 pl-4 sm:pl-6 py-3 sm:py-4 animate-slide-up" style={{ animationDelay: `${0.2 + categoryIndex * 0.1}s` }}>
             <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
               <div className="w-5 h-5 sm:w-6 sm:h-6 bg-[#B56E74] dark:bg-[#B56E74]/80 rounded flex items-center justify-center">
                 {category.icon}
@@ -124,7 +124,7 @@ export function SimpleSkillsBoard() {
             
             <div className="flex flex-wrap gap-3 sm:gap-6">
               {category.skills.map((skill, index) => (
-                <div key={index} className="flex flex-col items-center gap-2">
+                <div key={index} className="flex flex-col items-center gap-2 animate-slide-up" style={{ animationDelay: `${0.3 + categoryIndex * 0.1 + index * 0.05}s` }}>
                   {/* Circular Progress with Logo */}
                   <div className="relative w-12 h-12 sm:w-16 sm:h-16">
                     {/* Progress Circle Only */}

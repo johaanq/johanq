@@ -324,3 +324,46 @@ html {
 .dark *::-webkit-scrollbar-thumb:hover {
   background-color: rgba(181, 110, 116, 0.6);
 }
+
+/* Highlight keywords in About Me section */
+.highlight-keyword {
+  color: #B56E74;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.highlight-keyword:hover {
+  color: #A55A60;
+}
+
+.dark .highlight-keyword {
+  color: #D67A80;
+}
+
+.dark .highlight-keyword:hover {
+  color: #E88A90;
+}
+
+/* Enhanced slide-up animation for About Me paragraphs */
+@keyframes slide-up-enhanced {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up-enhanced 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Staggered animation delays for paragraphs */
+.animate-slide-up:nth-child(1) { animation-delay: 0.1s; }
+.animate-slide-up:nth-child(2) { animation-delay: 0.2s; }
+.animate-slide-up:nth-child(3) { animation-delay: 0.3s; }
+.animate-slide-up:nth-child(4) { animation-delay: 0.4s; }
