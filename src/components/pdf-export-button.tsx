@@ -8,8 +8,9 @@ import { ThemeToggle } from "@/components/theme-toggle"
 export function PDFExportButton() {
   const handleExportPDF = () => {
     // Descargar directamente el archivo PDF estático desde la carpeta public
+    // Agregamos timestamp para evitar caché del navegador
     const link = document.createElement('a')
-    link.href = '/Johan Quiñones - CV.pdf'
+    link.href = `/Johan Quiñones - CV.pdf?v=${Date.now()}`
     link.download = 'Johan Quiñones - CV.pdf'
     document.body.appendChild(link)
     link.click()
@@ -119,7 +120,7 @@ export function PDFExportButton() {
               <h1>Johan Jorge Quiñones Tintaya</h1>
               <div class="subtitle">Full Stack Developer & Software Engineer</div>
               <div class="contact">
-                📧 quinonesjorge83@gmail.com | 📍 Lima, Perú | 🎓 Ingeniería de Software - 7mo Ciclo UPC | 
+                📧 quinonesjorge83@gmail.com | 📞 +51 961 339 606 | 🆔 DNI: 77667906 | 📍 Lima, Perú | 🎓 Ingeniería de Software - 7mo Ciclo UPC | 
                 <a href="https://github.com/johaanq" target="_blank" class="pdf-link">🔗 GitHub</a> | 
                 <a href="https://linkedin.com/in/johan-quinones-tintaya" target="_blank" class="pdf-link">💼 LinkedIn</a>
               </div>
@@ -127,11 +128,11 @@ export function PDFExportButton() {
 
             <div class="pdf-section">
               <h2>Sobre mí</h2>
-              <p>Soy un desarrollador Full Stack apasionado por la tecnología y la innovación, actualmente cursando el 7mo ciclo de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Mi enfoque se centra en crear soluciones tecnológicas robustas y escalables que generen impacto real en los usuarios.</p>
+              <p>Desarrollador Full Stack apasionado por crear soluciones tecnológicas innovadoras. Actualmente en 7mo ciclo de Ingeniería de Software en la UPC, especializado en desarrollo web y móvil con tecnologías modernas.</p>
               
-              <p><strong>Especialización:</strong> Desarrollo de aplicaciones web y móviles con arquitecturas modernas, implementando mejores prácticas de desarrollo y metodologías ágiles. Experiencia sólida en el ecosistema JavaScript/TypeScript (React, Next.js) y tecnologías backend (Spring Boot, Java, C#).</p>
+              <p><strong>Especialización:</strong> Dominio de React, Next.js, Spring Boot y Flutter. Experiencia en proyectos colaborativos aplicando arquitecturas escalables y metodologías ágiles. Más de 200 commits en proyectos reales y trabajo en equipo con múltiples desarrolladores.</p>
               
-              <p><strong>Enfoque profesional:</strong> Me destaco por mi capacidad de análisis técnico, resolución de problemas complejos y trabajo colaborativo. Busco constantemente oportunidades para aplicar nuevas tecnologías y metodologías que mejoren la eficiencia y calidad del desarrollo de software.</p>
+              <p><strong>Enfoque profesional:</strong> Enfocado en entregar código limpio, eficiente y mantenible. Busco constantemente aprender nuevas tecnologías y contribuir en proyectos que generen impacto real.</p>
             </div>
 
             <div class="pdf-grid">
@@ -314,7 +315,7 @@ export function PDFExportButton() {
       <ThemeToggle />
       <Button 
         onClick={handleExportPDF} 
-        className="shadow-lg bg-[#B56E74] hover:bg-[#B56E74]/80 dark:bg-[#B56E74]/90 dark:hover:bg-[#B56E74]/70 text-white border border-[#B56E74]/30 dark:border-[#B56E74]/50 transition-all duration-200 text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2" 
+        className="shadow-lg !bg-[#B56E74] hover:!bg-[#B56E74]/80 text-white !border-none transition-all duration-200 text-xs sm:text-sm px-3 py-2 sm:px-4 sm:py-2" 
         size="sm"
       >
         <Download className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />

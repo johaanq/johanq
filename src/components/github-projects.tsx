@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Github, GitBranch, Star, Eye, Users, Calendar, Code, Activity, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, ExternalLink } from "lucide-react"
+import { Github, GitBranch, Star, Eye, Users, Calendar, Code, Activity, ChevronLeft, ChevronRight, ChevronDown, ChevronUp, ExternalLink, Briefcase } from "lucide-react"
 
 interface Repository {
   name: string
@@ -73,60 +73,42 @@ export function GitHubProjects() {
     {
       name: "lawconnect-backend",
       title: "LawConnect",
-      description: "Aplicación multiplataforma para conectar abogados con clientes, facilitando servicios legales digitales.",
-      context: "DartlinWave",
-      period: "Abril - Julio 2025",
-      technologies: ["Flutter", "Android", "Spring Boot", "API RESTful", "Git"],
+      description: "Plataforma para conectar abogados con clientes en la gestión de casos legales con arquitectura de microservicios.",
+      context: "SuitsUPC",
+      period: "2024-2025",
+      technologies: ["Spring Boot", "Microservicios", "React", "MySQL", "Docker", "JWT"],
       achievements: [
-        "Arquitectura escalable multiplataforma",
-        "Sistema de autenticación completo",
-        "Más de 200 commits colaborativos"
+        "Arquitectura de microservicios con Spring Cloud Gateway",
+        "Sistema completo de gestión de casos legales",
+        "Autenticación JWT y autorización basada en roles"
       ],
       language: "Java",
-      stars: 2,
-      forks: 1,
-      watchers: 3,
-      size: 1250,
-      lastUpdate: "2025-07-15",
-      url: "https://github.com/DartlinWave/lawconnect-backend",
+      stars: 0,
+      forks: 0,
+      watchers: 1,
+      size: 2500,
+      lastUpdate: "2025-01-15",
+      url: "https://github.com/SuitsUPC/lawconnect-backend",
       isPrivate: false,
       type: "academic",
       relatedRepos: [
         { 
           name: "Backend", 
-          url: "https://github.com/DartlinWave/lawconnect-backend", 
+          url: "https://github.com/SuitsUPC/lawconnect-backend", 
           type: "Backend",
           language: "Java",
-          technologies: ["Spring Boot", "Java", "MySQL", "JWT", "REST API"],
-          description: "API RESTful para gestión de servicios legales con autenticación y autorización",
-          lastUpdate: "2025-07-15"
+          technologies: ["Spring Boot", "Microservicios", "MySQL", "Docker", "JWT", "Spring Cloud Gateway"],
+          description: "Backend con arquitectura de microservicios para gestión de casos legales",
+          lastUpdate: "2025-01-15"
         },
         { 
-          name: "Flutter", 
-          url: "https://github.com/DartlinWave/LawConnect-Mobile-Flutter", 
-          type: "Mobile",
-          language: "Dart",
-          technologies: ["Flutter", "Dart", "Provider", "HTTP", "Material Design"],
-          description: "Aplicación móvil multiplataforma para clientes y abogados",
-          lastUpdate: "2025-07-10"
-        },
-        { 
-          name: "Android", 
-          url: "https://github.com/DartlinWave/lawconnect-android", 
-          type: "Mobile",
-          language: "Java",
-          technologies: ["Android", "Java", "Retrofit", "Room", "Material Design"],
-          description: "Aplicación nativa Android para gestión de casos legales",
-          lastUpdate: "2025-07-08"
-        },
-        { 
-          name: "Documentación", 
-          url: "https://github.com/DartlinWave/lawconnect-report", 
-          type: "Docs",
-          language: "Markdown",
-          technologies: ["Markdown", "Documentación", "Arquitectura", "API Docs"],
-          description: "Documentación completa del proyecto, arquitectura y guías de uso",
-          lastUpdate: "2025-07-20"
+          name: "Frontend", 
+          url: "https://github.com/SuitsUPC/lawconnect-frontend", 
+          type: "Frontend",
+          language: "JavaScript",
+          technologies: ["React", "JavaScript", "Axios", "Material-UI", "React Router"],
+          description: "Interfaz web para clientes y abogados en la plataforma LawConnect",
+          lastUpdate: "2025-01-10"
         }
       ]
     },
@@ -269,6 +251,108 @@ export function GitHubProjects() {
           lastUpdate: "2025-09-12"
         }
       ]
+    },
+    {
+      name: "OnControl",
+      title: "OnControl",
+      description: "Sistema de gestión oncológica para control y seguimiento de pacientes con cáncer. Plataforma web colaborativa desarrollada con arquitectura MERN para el sector salud.",
+      context: "ControlUPC",
+      period: "2025",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "REST API"],
+      achievements: [
+        "Sistema médico para oncólogos y gestión de pacientes",
+        "Desarrollo colaborativo con equipo de 5 desarrolladores",
+        "Arquitectura MERN escalable para sector salud"
+      ],
+      language: "JavaScript",
+      stars: 0,
+      forks: 0,
+      watchers: 1,
+      size: 1800,
+      lastUpdate: "2025-12-01",
+      url: "https://github.com/johaanq/OnControl",
+      isPrivate: false,
+      type: "academic",
+      relatedRepos: [
+        { 
+          name: "Frontend", 
+          url: "https://github.com/johaanq/OnControl", 
+          type: "Frontend",
+          language: "JavaScript",
+          technologies: ["React", "JavaScript", "CSS3", "Axios", "React Router"],
+          description: "Interfaz web para oncólogos y gestión de pacientes oncológicos",
+          lastUpdate: "2025-12-01"
+        },
+        { 
+          name: "Backend", 
+          url: "https://github.com/johaanq/oncontrol-backend", 
+          type: "Backend",
+          language: "JavaScript",
+          technologies: ["Node.js", "Express", "MongoDB", "JWT", "REST API"],
+          description: "API backend para sistema de gestión oncológica y control de tratamientos",
+          lastUpdate: "2025-11-28"
+        },
+        { 
+          name: "Documentación", 
+          url: "https://github.com/ControlUPC/report", 
+          type: "Docs",
+          language: "Markdown",
+          technologies: ["Markdown", "Documentación", "Arquitectura", "Sector Salud"],
+          description: "Documentación técnica completa del sistema oncológico y arquitectura",
+          lastUpdate: "2025-12-02"
+        }
+      ]
+    },
+    {
+      name: "metalix-backend",
+      title: "Metalix",
+      description: "Plataforma IoT para monitoreo y gestión de soluciones industriales con integración de sensores y análisis de datos en tiempo real.",
+      context: "Desarrollo-Soluciones-IOT",
+      period: "2025",
+      technologies: ["Spring Boot", "React", "IoT", "MySQL", "REST API"],
+      achievements: [
+        "Implementación de sistema IoT completo",
+        "Integración de sensores y monitoreo en tiempo real",
+        "Dashboard interactivo para análisis de datos"
+      ],
+      language: "Java",
+      stars: 0,
+      forks: 0,
+      watchers: 1,
+      size: 2100,
+      lastUpdate: "2025-12-02",
+      url: "https://github.com/johaanq/metalix-backend",
+      isPrivate: false,
+      type: "academic",
+      relatedRepos: [
+        { 
+          name: "Backend", 
+          url: "https://github.com/johaanq/metalix-backend", 
+          type: "Backend",
+          language: "Java",
+          technologies: ["Spring Boot", "Java", "MySQL", "IoT", "REST API"],
+          description: "Backend para gestión de dispositivos IoT y procesamiento de datos",
+          lastUpdate: "2025-12-02"
+        },
+        { 
+          name: "Frontend", 
+          url: "https://github.com/johaanq/metalix-frontend", 
+          type: "Frontend",
+          language: "JavaScript",
+          technologies: ["React", "JavaScript", "Chart.js", "WebSockets", "Material-UI"],
+          description: "Dashboard web para visualización y control de dispositivos IoT",
+          lastUpdate: "2025-11-30"
+        },
+        { 
+          name: "Documentación", 
+          url: "https://github.com/Desarrollo-Soluciones-IOT-Grupo-02/Report", 
+          type: "Docs",
+          language: "Markdown",
+          technologies: ["Markdown", "Documentación", "IoT", "Arquitectura"],
+          description: "Documentación técnica completa del proyecto IoT",
+          lastUpdate: "2025-12-01"
+        }
+      ]
     }
   ]
 
@@ -391,9 +475,20 @@ export function GitHubProjects() {
                   }}
                 >
                   <div className="flex items-start justify-between mb-2">
-                    <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">
-                      {repo.title}
-                    </h4>
+                    <div className="flex items-center gap-2">
+                      <h4 className="font-semibold text-gray-900 dark:text-gray-100 text-sm">
+                        {repo.title}
+                      </h4>
+                      <a
+                        href="https://johanq.vercel.app/#projects"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#B56E74] dark:text-[#B56E74]/90 hover:text-[#B56E74]/70 transition-colors"
+                        title="Ver en Portfolio"
+                      >
+                        <Briefcase className="h-3 w-3" />
+                      </a>
+                    </div>
                     <span className="px-2 py-1 bg-[#B56E74]/10 dark:bg-[#B56E74]/20 text-[#B56E74] dark:text-[#B56E74]/90 rounded text-xs capitalize">
                       {repo.type}
                     </span>
@@ -448,9 +543,20 @@ export function GitHubProjects() {
                 
                 <div className="bg-[#0D0D0D]/5 dark:bg-[#0D0D0D]/20 rounded-lg p-6 space-y-4 border border-[#B56E74]/20 dark:border-[#B56E74]/40">
                   <div>
-                    <h4 className="font-semibold text-xl text-gray-900 dark:text-gray-100 mb-2">
-                      {selectedRepo.title}
-                    </h4>
+                    <div className="flex items-center gap-2 mb-2">
+                      <h4 className="font-semibold text-xl text-gray-900 dark:text-gray-100">
+                        {selectedRepo.title}
+                      </h4>
+                      <a
+                        href="https://johanq.vercel.app/#projects"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#B56E74] dark:text-[#B56E74]/90 hover:text-[#B56E74]/70 transition-colors"
+                        title="Ver en Portfolio"
+                      >
+                        <Briefcase className="h-5 w-5" />
+                      </a>
+                    </div>
                     <p className="text-gray-600 dark:text-gray-400 mb-3">
                       {selectedRepo.description}
                     </p>

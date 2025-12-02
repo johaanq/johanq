@@ -14,8 +14,10 @@ export function TerminalSimulator() {
   const [currentCommand, setCurrentCommand] = useState('')
   const [commandHistory, setCommandHistory] = useState<Command[]>([])
   const [isTyping, setIsTyping] = useState(false)
+  const [hasStarted, setHasStarted] = useState(false)
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   const availableCommands = {
     'help': {
@@ -255,16 +257,35 @@ export function TerminalSimulator() {
   }, [commandHistory])
 
   useEffect(() => {
-    // Auto-demo cuando se carga el componente
-    const timer = setTimeout(() => {
-      typewriterDemo()
-    }, 2000)
-    
-    return () => clearTimeout(timer)
-  }, [])
+    // Intersection Observer para detectar cuando el terminal es visible
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasStarted) {
+            setHasStarted(true)
+            // Auto-demo cuando el componente es visible
+            setTimeout(() => {
+              typewriterDemo()
+            }, 500)
+          }
+        })
+      },
+      { threshold: 0.3 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
+  }, [hasStarted])
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
+    <div ref={sectionRef} className="max-w-4xl mx-auto space-y-6">
       <div className="text-center">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2 animate-fade-in">
           Terminal Simulator
